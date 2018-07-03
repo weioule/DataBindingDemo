@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="SecondAvtivityBinding">
+
+        <import type="android.view.View"/>
+
+        <import
+            alias="MyView"
+            type="com.example.weioule.databindingdemo.View"/>
+
+        <variable
+            name="bean"
+            type="com.example.weioule.databindingdemo.Bean"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="@{bean.name}"
+            android:textSize="15sp"
+            android:visibility="@{bean.visible?View.VISIBLE:View.GONE}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="65dp"
+            android:text="@{bean.title ?? `title为空`}"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="105dp"
+            android:text="@{MyView.txt+`\n\n`+MyView.fun}"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="25dp"
+            android:onClick="doNext"
+            android:padding="10dp"
+            android:text="do next"/>
+    </RelativeLayout>
+</layout>
+
+
+
+    

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DataBindingDemo</string>
+
+    <string name="str">我是resources里的string字符串</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="java.util.List"/>
+
+        <variable
+            name="list"
+            type="List&lt;String>"/>
+
+        <variable
+            name="bean"
+            type="com.example.weioule.databindingdemo.Bean"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_include"
+            app:bean="@{bean}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/include"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:text="@{bean.name +` `+ @string/str}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="25dp"
+            android:padding="10dp"
+            android:text="@{list[0]}"/>
+    </RelativeLayout>
+</layout>
